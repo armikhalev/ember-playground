@@ -3,10 +3,10 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   value: '',
 
-  init() {
-    this._super(...arguments);
-    this.get('filter')('').then((results) => this.set('results', results));
-  },
+  // init() {
+  //   this._super(...arguments);
+  //   this.get('filter')('').then((results) => this.set('results', results));
+  // },
 
   actions: {
     handleFilterEntry() {

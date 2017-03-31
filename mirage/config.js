@@ -29,8 +29,11 @@ export default function() {
   // this.get('/words');
   // this.get('/words/:id');
   // this.get('/english-words');
-  // this.get('/english-words/:id');
+  this.get('/english-words/:id');
   this.get('/mela-words/:id');
+  this.get('/a-words');
+  this.get('/b-words');
+  this.get('/c-words');
 
   this.get('/words', (schema, request) => {
 
@@ -93,5 +96,10 @@ export default function() {
     } else {
       return { data: rentals };
     }
+  });
+  
+   // Find and return the provided rental from our rental list above
+  this.get('/rentals/:id', function (db, request) {
+    return { data: rentals.find((rental) => request.params.id === rental.id) };
   });
 }
